@@ -4,7 +4,8 @@ import pandas as pd
 prueba = pd.read_csv("Prueba.csv", squeeze=True)
 
 # Crear un diccionario de los valores que se reemplazaran
-valores = prueba.loc[0:61, "VALOR"]
+row_count = len(prueba)
+valores = prueba.loc[0:row_count, "VALOR"]
 valores = dict(valores)
 
 # Se reemplazan los valores nan con 0 y se copia a un dataframe diferente
